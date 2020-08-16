@@ -8,9 +8,11 @@ const app = express();
 //     })
 // })
 
-const productRoutes = require('./routes./product');
+const productRoutes = require('./routes/product');
+const orderRoutes = require('./routes/orders');
 
 app.use('/product', productRoutes);
+app.use('./orders', orderRoutes);
 
 const PORT = 5000;
 
