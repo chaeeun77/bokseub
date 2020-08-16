@@ -2,13 +2,16 @@ const express = require('express');
 const app = express();
 
 
-app.use((req, res) => {
-    res.json({
-        message: 'It works!'
-    })
-})
+// app.use((req, res) => {
+//     res.json({
+//         message: 'It works!'
+//     })
+// })
 
+const productRoutes = require('./routes./product');
 
-const PORT = 4000;
+app.use('/product', productRoutes);
 
-app.listen(PORT, console.log('server start'))
+const PORT = 5000;
+
+app.listen(PORT, console.log('server start'));
